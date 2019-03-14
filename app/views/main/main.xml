@@ -1,0 +1,53 @@
+<Page loaded="pageLoaded" 
+	xmlns="http://schemas.nativescript.org/tns.xsd" 
+	xmlns:drawer="nativescript-telerik-ui/sidedrawer" 
+	xmlns:widgets="shared/widgets" 
+	xmlns:tabs="views/main/tabs" 
+	xmlns:bottomnav="nativescript-bottomnavigation" 
+	xmlns:statusbar="nativescript-statusbar" navigatingTo="onNavigatingTo" class="list-page">
+	<!--<StackLayout><Label text="Tap the button" class="title"/><Button text="TAP" tap="{{ onTap }}" /><Label text="{{ message }}" class="message" textWrap="true"/></StackLayout>-->
+	<statusbar:StatusBar ios:barStyle="light" />
+	<ActionBar title="Mondo Opti">
+		<NavigationButton icon="res://ic_menu" tap="toggleDrawer" ios:visibility="collapsed" />
+		<ActionBar.actionItems>
+			<ios>
+				<action-item icon="res://ic_menu" ios.position="left" tap="toggleDrawer" />
+			</ios>
+		</ActionBar.actionItems>
+		<ActionItem tap="signOut" ios.systemIcon="16" ios.position="right" text="Logout" android.position="popup"></ActionItem>
+	</ActionBar>
+	<drawer:rad-side-drawer id="drawer" gesturesEnabled="false">
+		<drawer:rad-side-drawer.mainContent>
+			<!-- Home page contents -->
+			<StackLayout loaded="contentLoaded">
+				<GridLayout rows="auto, *, auto">
+					<GridLayout row="0" columns="10, *, *, 10">
+						<Button col="1" text="Energy Monitor" class="site-button" tap="showMonitor"></Button>
+						<Button col="2" text="Energy Manager" class="site-button" tap="showManager"></Button>
+					</GridLayout>
+					<StackLayout row="1">
+						<tabs:siteload visibility="{{ selectedTabId == 0 ? 'visible' : 'collapsed' }}" />
+						<tabs:battery visibility="{{ selectedTabId == 1 ? 'visible' : 'collapsed' }}" />
+						<tabs:solar visibility="{{ selectedTabId == 2 ? 'visible' : 'collapsed' }}" />
+						<tabs:minigrid visibility="{{ selectedTabId == 3 ? 'visible' : 'collapsed' }}" />
+						<tabs:grid visibility="{{ selectedTabId == 4 ? 'visible' : 'collapsed' }}" />
+					</StackLayout>
+					<GridLayout row="2">
+						<bottomnav:BottomNavigation tabSelected="tabSelected">
+							<bottomnav:BottomNavigation.items>
+								<bottomnav:BottomNavigationItem title="Site Load" icon="house" color="#6D6E71" />
+								<bottomnav:BottomNavigationItem title="Battery" icon="battery" color="#6D6E71" />
+								<bottomnav:BottomNavigationItem title="Solar" icon="solar" color="#6D6E71" />
+								<bottomnav:BottomNavigationItem title="Mini Grid" icon="minigrid" color="#6D6E71" />
+								<bottomnav:BottomNavigationItem title="Grid" icon="grid" color="#6D6E71" />
+							</bottomnav:BottomNavigation.items>
+						</bottomnav:BottomNavigation>
+					</GridLayout>
+				</GridLayout>
+			</StackLayout>
+		</drawer:rad-side-drawer.mainContent>
+		<drawer:rad-side-drawer.drawerContent>
+			<widgets:drawer-content />
+		</drawer:rad-side-drawer.drawerContent>
+	</drawer:rad-side-drawer>
+</Page>

@@ -1,0 +1,29 @@
+<TabView class="tab-view-custom" selectedColor="#6D6E71" selectedIndexChanged="tabChanged">
+    <TabView.items>
+        <TabViewItem title="Site load" iconSource="res://house">
+            <TabViewItem.view>
+                <main:siteload />
+            </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Battery" iconSource="res://battery">
+            <TabViewItem.view>
+                <main:battery />
+            </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Solar" iconSource="res://solar">
+            <TabViewItem.view>
+                <main:solar />
+            </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Mini Grid" iconSource="res://minigrid">
+            <TabViewItem.view>
+                <main:minigrid />
+            </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Grid" iconSource="res://grid">
+            <TabViewItem.view>
+                <main:grid />
+            </TabViewItem.view>
+        </TabViewItem>
+    </TabView.items>
+</TabView>

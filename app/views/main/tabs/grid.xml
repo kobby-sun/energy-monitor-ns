@@ -1,0 +1,20 @@
+<GridLayout rows="*, auto">
+    <ScrollView row="0">
+        <GridLayout rows="200, 20, *">
+            <GridLayout row="0" columns="20, *, 10, *, 10">
+                <StackLayout verticalAlignment="middle" col="1">
+                    <Image src="~/images/grid.png" height="140" />
+                </StackLayout>
+                <GridLayout col="3" columns="*, auto, *" rows="30, auto, *">
+                    <StackLayout row="1" col="1">
+                        <Label fontSize="15" text='Grid Usage:'></Label>
+                        <Label fontSize="25" text='0 kWh'></Label>
+                    </StackLayout>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+    <GridLayout row="1" columns="*, auto, *">
+        <Label class="lbl" text='20 April 2016 / 10:45 am' col="1"></Label>
+    </GridLayout>
+</GridLayout>

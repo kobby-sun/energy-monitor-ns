@@ -1,0 +1,18 @@
+<Page 
+  xmlns="http://schemas.nativescript.org/tns.xsd" shownModally="onShownModally" navigatedTo="navigatedTo" navigatedFrom="navigatedFrom" loaded="onLoaded" unloaded="onUnloaded" backgroundColor="#4B4B4B">
+  <ActionBar title="Energy Monitor" backgroundColor="#4B4B4B">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+  </ActionBar>
+  <ScrollView>
+    <StackLayout>
+      <!--<Label text="Energy Monitor" fontSize="30" />-->
+      <activity-indicator visibility="{{ loading ? 'visible' : 'collapsed' }}" busy="{{ loading }}" width="100" height="100" />
+      <ScrollView visibility="{{ loading ? 'collapsed' : 'visible' }}">
+        <WebView id="webView" src="~/www/monitor.html" height="380"></WebView>
+        <!--<WebView id="webView" backgroundColor="#3EB08E" src="'~/www/monitor.html'" />-->
+      </ScrollView>
+      <!--<TextField hint="username" id="username" automationText="username" text="username"/><TextField hint="password" id="password" automationText="password" text="password" secure="true"/>-->
+      <Button text="Back" class="main-button" tap="onNavBtnTap"/>
+    </StackLayout>
+  </ScrollView>
+</Page>

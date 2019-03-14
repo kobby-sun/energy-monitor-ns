@@ -1,0 +1,27 @@
+<GridLayout rows="*, auto">
+    <ScrollView row="0">
+        <GridLayout rows="200, 20, *">
+            <GridLayout row="0" columns="20, *, 10, *, 10">
+                <StackLayout verticalAlignment="middle" col="1">
+                    <Image src="~/images/battery.png" height="140" />
+                </StackLayout>
+                <GridLayout col="3" columns="*, auto, *" rows="30, auto, *">
+                    <StackLayout row="1" col="1">
+                        <Label fontSize="15" text='Battery Usage:'></Label>
+                        <Label fontSize="25" text="{{ property | energeUsage('Battery Output') }}"></Label>
+                        <!--<GridLayout columns="*, 5, *"><Label col="0" class="ion" fontSize="35" text="{{'ion-ios-thunderstorm' | fonticon}}"></Label><Label col="2" fontSize="25" text="{{ property | energeUsage('Battery Output') }}"></Label></GridLayout>-->
+                        <!--<Label class="fa" fontSize="35" text="{{'fa-bluetooth' | fonticon}}"></Label> -->
+                    </StackLayout>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout row="2" columns="*, auto, 10, auto, 10, auto, *">
+                <Label class="lbl" text='Today' col="1"></Label>
+                <Label class="tag-lbl" text='Usage: 5.6 kWh' col="3"></Label>
+                <Label class="tag-lbl" text='Storage: 8.1 / 15.5 kWh' col="5"></Label>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+    <GridLayout row="1" columns="*, auto, *">
+        <Label class="lbl" text='20 April 2016 / 10:45 am' col="1"></Label>
+    </GridLayout>
+</GridLayout>

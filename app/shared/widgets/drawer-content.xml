@@ -1,0 +1,12 @@
+<GridLayout class="drawer-content" rows="auto, auto">
+  <GridLayout columns="auto, *">
+    <Label fontSize="40" class="ion" text="{{'ion-location' | fonticon}}"></Label>
+    <Label fontSize="30" col="1" text="Beaconsfield"></Label>
+  </GridLayout>
+  <Repeater row="1" items="{{ properties }}">
+    <Repeater.itemTemplate>
+      <Label fontSize="18" text="{{ address.street }}" tap="navigate" value="{{ id }}" class="{{ $parents['Repeater'].propertyId, $parents['Repeater'].propertyId == id ? 'selected' : '' }}" />
+    </Repeater.itemTemplate>
+  </Repeater>
+  <!--<label row="1" text="3 New Energy Street, Beaconsfield" tap="navigate" value="3" class="{{ propertyId == 3 ? 'selected' : '' }}" fontSize="12" /><label row="2" text="4 New Energy Street, Beaconsfield" tap="navigate" value="4" class="{{ propertyId == 4 ? 'selected' : '' }}" fontSize="12" />-->
+</GridLayout>

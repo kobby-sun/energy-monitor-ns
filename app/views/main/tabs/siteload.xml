@@ -1,0 +1,32 @@
+<GridLayout rows="*, auto">
+    <ScrollView row="0">
+        <GridLayout rows="200, 20, *">
+            <GridLayout row="0" columns="20, *, 10, *, 10">
+                <StackLayout verticalAlignment="middle" col="1">
+                    <Image src="~/images/house.png" height="140" />
+                </StackLayout>
+                <ScrollView col="3">
+                    <ListView items="{{ items }}">
+                        <ListView.itemTemplate>
+                            <GridLayout padding="5" columns="40, 10, *">
+                                <Image col="0" src="~/images/money-timer.png"></Image>
+                                <StackLayout col="2">
+                                    <Label fontSize="15" text="{{ device }}"></Label>
+                                    <Label fontSize="25" text="{{ usage }}"></Label>
+                                </StackLayout>
+                            </GridLayout>
+                        </ListView.itemTemplate>
+                    </ListView>
+                </ScrollView>
+            </GridLayout>
+            <GridLayout row="2" columns="*, auto, 10, auto, 10, auto, *">
+                <Label class="lbl" text='Cost' col="1"></Label>
+                <Label class="tag-lbl" text='This hour: $1.13' col="3"></Label>
+                <Label class="tag-lbl" text='Today: $4.17' col="5"></Label>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+    <GridLayout row="1" columns="*, auto, *">
+        <Label class="lbl" text='20 April 2016 / 10:45 am' col="1"></Label>
+    </GridLayout>
+</GridLayout>

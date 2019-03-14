@@ -1,0 +1,17 @@
+<Page 
+  xmlns="http://schemas.nativescript.org/tns.xsd" shownModally="onShownModally" loaded="onLoaded" unloaded="onUnloaded" backgroundColor="#3EB08E">
+  <ActionBar title="Energy Manager">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
+  </ActionBar>
+  <ScrollView>
+    <StackLayout >
+      <!--<Label text="Energy Manager" fontSize="30" />-->
+      <Button text="Test Camera" tap="test1"/>
+      <Image src="{{ imgSrc }}" />
+      <Button text="Test Location" tap="test2"/>
+      <Label textWrap="true" text="{{ location }}" />
+      <!--<TextField hint="username" id="username" automationText="username" text="username"/><TextField hint="password" id="password" automationText="password" text="password" secure="true"/>-->
+      <Button text="Back" class="main-button" tap="onNavBtnTap"/>
+    </StackLayout>
+  </ScrollView>
+</Page>
